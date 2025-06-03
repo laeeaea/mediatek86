@@ -29,8 +29,8 @@ namespace MediaTek86.dal
             List<Personnel> LesPersonnels = new List<Personnel>();
             if (access != null)
             {
-                string req = "select p.idpersonnel as idpersonnel, p.nom as nom, p.prenom as prenom, p.tel as tel, p.mail as mail, s.idservice as idservice, s.nom as service";
-                req += "from personnel p join service s on (p.idservice = s.idservice)";
+                string req = "select p.idpersonnel as idpersonnel, p.nom as nom, p.prenom as prenom, p.tel as tel, p.mail as mail, s.idservice as idservice, s.nom as service ";
+                req += "from personnel p join service s on (p.idservice = s.idservice) ";
                 req += "order by nom, prenom;";
                 try
                 {

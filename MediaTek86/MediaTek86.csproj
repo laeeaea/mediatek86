@@ -114,6 +114,7 @@
   <ItemGroup>
     <Compile Include="bddmanager\bddmanager.cs" />
     <Compile Include="controller\FrmConnexionPageController.cs" />
+    <Compile Include="controller\FrmPersonnelPageController.cs" />
     <Compile Include="dal\Access.cs" />
     <Compile Include="dal\ResponsableAccess.cs" />
     <Compile Include="dal\PersonnelAccess.cs" />
