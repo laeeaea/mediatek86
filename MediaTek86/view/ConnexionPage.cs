@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace MediaTek86.view
 {
-    public partial class connexion_page : Form
+    public partial class ConnexionPage : Form
     {
-        public connexion_page()
+        public ConnexionPage()
         {
             InitializeComponent();
         }
