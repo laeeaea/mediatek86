@@ -1,0 +1,27 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MediaTek86.model
+{
+    public class Personnel
+    {
+        public string Nom { get; set; }
+        public string Prenom { get; set; }
+        public string Tel { get; set; }
+        public string Mail { get; set; }
+        public int IdService { get; set; }
+
+        public Personnel(string nom, string prenom, string tel, string mail, int idService)
+        {
+            this.Nom = nom;
+            this.Prenom = prenom;
+            this.Tel = tel;
+            this.Mail = mail;
+            this.IdService = idService;
+        }
+
+    }
+}
