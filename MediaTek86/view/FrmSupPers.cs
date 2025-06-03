@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace MediaTek86.view
 {
-    public partial class sup_pers : Form
+    public partial class FrmSupPers : Form
     {
-        public sup_pers()
+        public FrmSupPers()
         {
             InitializeComponent();
         }

@@ -1,6 +1,6 @@
 ﻿namespace MediaTek86.view
 {
-    partial class absences_page
+    partial class FrmAbsencesPage
     {
         /// <summary>
         /// Required designer variable.

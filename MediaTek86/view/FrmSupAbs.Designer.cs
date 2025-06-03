@@ -1,6 +1,6 @@
 ﻿namespace MediaTek86.view
 {
-    partial class sup_abs
+    partial class FrmSupAbs
     {
         /// <summary>
         /// Required designer variable.

@@ -1,6 +1,6 @@
 ﻿namespace MediaTek86.view
 {
-    partial class personnel_page
+    partial class FrmPersonnelPage
     {
         /// <summary>
         /// Required designer variable.
@@ -34,7 +34,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -55,6 +54,7 @@
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(225, 204);
             this.listBox1.TabIndex = 1;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // button1
             // 
@@ -86,36 +86,27 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(195, 269);
+            this.button4.Location = new System.Drawing.Point(32, 291);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(180, 32);
             this.button4.TabIndex = 5;
             this.button4.Text = "Afficher les absences";
             this.button4.UseVisualStyleBackColor = true;
             // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(659, 24);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(113, 34);
-            this.button5.TabIndex = 6;
-            this.button5.Text = "Déconnexion";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // personnel_page
+            // FrmPersonnelPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.label1);
-            this.Name = "personnel_page";
+            this.Name = "FrmPersonnelPage";
             this.Text = "Gestion du personnel";
+            this.Load += new System.EventHandler(this.personnel_page_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -129,6 +120,5 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
     }
 }

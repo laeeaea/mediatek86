@@ -1,6 +1,6 @@
 ﻿namespace MediaTek86.view
 {
-    partial class ajo_mod_pers
+    partial class FrmAjModPers
     {
         /// <summary>
         /// Required designer variable.

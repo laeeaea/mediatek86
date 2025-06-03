@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace MediaTek86.view
 {
-    public partial class personnel_page : Form
+    public partial class FrmSupAbs : Form
     {
-        public personnel_page()
+        public FrmSupAbs()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

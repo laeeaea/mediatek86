@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace MediaTek86.view
 {
-    public partial class ajo_mod_pers : Form
+    public partial class FrmAjModAbs : Form
     {
-        public ajo_mod_pers()
+        public FrmAjModAbs()
         {
             InitializeComponent();
-        }
-
-        private void textboxnom_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void label1_Click(object sender, EventArgs e)

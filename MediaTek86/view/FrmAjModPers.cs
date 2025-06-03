@@ -10,14 +10,19 @@ using System.Windows.Forms;
 
 namespace MediaTek86.view
 {
-    public partial class absences_page : Form
+    public partial class FrmAjModPers : Form
     {
-        public absences_page()
+        public FrmAjModPers()
         {
             InitializeComponent();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void textboxnom_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

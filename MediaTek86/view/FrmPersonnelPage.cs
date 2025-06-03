@@ -10,14 +10,30 @@ using System.Windows.Forms;
 
 namespace MediaTek86.view
 {
-    public partial class ajo_mod_abs : Form
+    public partial class FrmPersonnelPage : Form
     {
-        public ajo_mod_abs()
+        public FrmPersonnelPage()
         {
             InitializeComponent();
+
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void personnel_page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

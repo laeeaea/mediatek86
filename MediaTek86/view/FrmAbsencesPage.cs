@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace MediaTek86.view
 {
-    public partial class sup_abs : Form
+    public partial class FrmAbsencesPage : Form
     {
-        public sup_abs()
+        public FrmAbsencesPage()
         {
             InitializeComponent();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

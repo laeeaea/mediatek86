@@ -1,6 +1,6 @@
 ﻿namespace MediaTek86.view
 {
-    partial class ConnexionPage
+    partial class FrmConnexionPage
     {
         /// <summary>
         /// Required designer variable.
@@ -48,7 +48,7 @@
             // 
             this.button1.Location = new System.Drawing.Point(437, 304);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(103, 28);
+            this.button1.Size = new System.Drawing.Size(103, 42);
             this.button1.TabIndex = 2;
             this.button1.Text = "Connexion";
             this.button1.UseVisualStyleBackColor = true;
@@ -92,8 +92,9 @@
             this.textBox2.Size = new System.Drawing.Size(157, 26);
             this.textBox2.TabIndex = 6;
             this.textBox2.UseSystemPasswordChar = true;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
-            // ConnexionPage
+            // FrmConnexionPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -104,7 +105,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
-            this.Name = "ConnexionPage";
+            this.Name = "FrmConnexionPage";
             this.Text = "Connexion";
             this.ResumeLayout(false);
             this.PerformLayout();
