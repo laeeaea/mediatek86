@@ -26,6 +26,9 @@ namespace MediaTek86.view
 
         }
 
+        /// <summary>
+        /// Remplie la liste de personnel
+        /// </summary>
         private void RemplirListePersonnel()
         {
             List<Personnel> lesPersonnels;
@@ -86,6 +89,11 @@ namespace MediaTek86.view
 
         }
 
+        /// <summary>
+        /// Active les boutons Modifier et Supprimer si une ligne est sélectionnée
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void listPersonnels_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             button2.Enabled = true;

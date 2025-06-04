@@ -93,6 +93,10 @@ namespace MediaTek86.dal
             }
         }
 
+        /// <summary>
+        /// Modifie un personnel
+        /// </summary>
+        /// <param name="personnel"></param>
         public void ModifierPersonnel(Personnel personnel)
         {
             if (access.Manager != null)
@@ -124,6 +128,11 @@ namespace MediaTek86.dal
                 }
             }
         }
+
+        /// <summary>
+        /// Supprime un personnel
+        /// </summary>
+        /// <param name="personnel"></param>
         public void SupprimerPersonnel(Personnel personnel)
         {
             if (access.Manager != null)

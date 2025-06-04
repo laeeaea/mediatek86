@@ -19,11 +19,19 @@ namespace MediaTek86.controller
             personnelAccess = new PersonnelAccess();
         }
 
+        /// <summary>
+        /// Récupère les personnels
+        /// </summary>
+        /// <returns></returns>
         public List<Personnel> GetLesPersonnels()
         {
             return personnelAccess.GetLesPersonnels();
         }
 
+        /// <summary>
+        /// Supprime les personnels
+        /// </summary>
+        /// <param name="personnel"></param>
         public void SupprimerPersonnel(Personnel personnel)
         {
             personnelAccess.SupprimerPersonnel(personnel);

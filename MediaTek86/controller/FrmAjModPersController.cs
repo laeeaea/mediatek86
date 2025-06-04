@@ -20,20 +20,37 @@ namespace MediaTek86.controller
             personnelAccess = new PersonnelAccess();
         }
 
+        /// <summary>
+        /// Récupère les personnels
+        /// </summary>
+        /// <returns></returns>
         public List<Personnel> GetLesPersonnels()
         {
             return personnelAccess.GetLesPersonnels();
         }
+
+        /// <summary>
+        /// Récupère les services pour la ComboBox
+        /// </summary>
+        /// <returns></returns>
         public List<Service> GetLesServices()
         {
             return serviceAccess.GetLesServices();
         }
 
+        /// <summary>
+        /// Ajoute un personnel
+        /// </summary>
+        /// <param name="personnel"></param>
         public void AjouterPersonnel(Personnel personnel)
         {
             personnelAccess.AjouterPersonnel(personnel);
         }
 
+        /// <summary>
+        /// Modifie un personnel
+        /// </summary>
+        /// <param name="personnel"></param>
         public void ModifierPersonnel(Personnel personnel)
         {
             personnelAccess.ModifierPersonnel(personnel);

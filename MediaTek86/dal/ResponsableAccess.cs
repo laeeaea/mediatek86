@@ -24,7 +24,7 @@ namespace MediaTek86.dal
         }
 
         /// <summary>
-        /// Controle si l'utillisateur a le droit de se connecter (login et mot de passe)
+        /// Controle pour l'authentification
         /// </summary>
         /// <param name="responsable">objet Responsable avec login et mot de passe</param>
         public Boolean ControleAuthentification(Responsable responsable)

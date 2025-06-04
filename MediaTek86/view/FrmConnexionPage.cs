@@ -26,6 +26,11 @@ namespace MediaTek86.view
             controller = new FrmConnexionPageController();
         }
 
+        /// <summary>
+        /// Bouton de connexion
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             String login = textBox1.Text;
@@ -54,6 +59,11 @@ namespace MediaTek86.view
 
         }
 
+        /// <summary>
+        /// TextBox de login
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
@@ -69,6 +79,11 @@ namespace MediaTek86.view
 
         }
 
+        /// <summary>
+        /// TextBox de mot de passe, cache le mot de passe
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
