@@ -17,7 +17,7 @@ namespace MediaTek86.model
 
         public Personnel(int idPersonnel, string nom, string prenom, string tel, string mail, Service service)
         {
-            this.IdPersonnel = IdPersonnel;
+            this.IdPersonnel = idPersonnel;
             this.Nom = nom;
             this.Prenom = prenom;
             this.Tel = tel;

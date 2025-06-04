@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using MediaTek86.model;
 using Serilog;
 
@@ -46,6 +47,8 @@ namespace MediaTek86.dal
                             Personnel personnel = new Personnel((int)record[0], (string)record[1], (string)record[2],
                                 (string)record[3], (string)record[4], new Service((int)record[5], (string)record[6]));
                             LesPersonnels.Add(personnel);
+                            Log.Debug("Personnel ID chargé : " + personnel.IdPersonnel);
+
                         }
                     }
                 }
@@ -96,6 +99,9 @@ namespace MediaTek86.dal
             {
                 string req = "update personnel set nom = @nom, prenom = @prenom, tel = @tel, mail = @mail, idservice = @idservice ";
                 req += "where idpersonnel = @idpersonnel;";
+                
+               
+
                 Dictionary<string, object> parameters = new Dictionary<string, object>
                 {
                     {"@idpersonnel", personnel.IdPersonnel },
@@ -105,6 +111,7 @@ namespace MediaTek86.dal
                     {"@mail", personnel.Mail},
                     {"@idservice", personnel.Service.IdService }
                 };
+
                 try
                 {
                     access.Manager.ReqUpdate(req, parameters);
@@ -123,7 +130,7 @@ namespace MediaTek86.dal
             {
                 string req = "delete from personnel where idpersonnel = @idpersonnel;";
                 Dictionary<string, object> parameters = new Dictionary<string, object> {
-                    {"@iddeveloppeur", personnel.IdPersonnel }
+                    {"@idpersonnel", personnel.IdPersonnel }
                 };
                 try
                 {

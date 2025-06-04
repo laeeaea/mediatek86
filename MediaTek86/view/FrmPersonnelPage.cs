@@ -49,8 +49,11 @@ namespace MediaTek86.view
             // Selectionne la ligne entière
             listPersonnels.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             listPersonnels.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+        }
 
-
+        private void listPersonnels_DataBindingComplete(object sender, EventArgs e)
+        {
+            listPersonnels.ClearSelection();
         }
         private void label1_Click(object sender, EventArgs e)
         {
@@ -95,17 +98,22 @@ namespace MediaTek86.view
         /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
-            
-            //Personnel personnel = listPersonnels.SelectedRows[0].DataBoundItem as Personnel;
-            //Developpeur developpeur = (Developpeur)bdgDeveloppeurs.List[bdgDeveloppeurs.Position];
 
-            FrmAjModPers frmAjModPers = new FrmAjModPers();
-            frmAjModPers.personnel = listPersonnels.SelectedRows[0].DataBoundItem as Personnel;
-            if (frmAjModPers.personnel == null)
+            if (listPersonnels.SelectedRows.Count == 0)
             {
-                MessageBox.Show("null avant");
+                MessageBox.Show("Veuillez sélectionner un personnel à modifier.");
+                return;
             }
-            DialogResult result = frmAjModPers.ShowDialog(); 
+
+            Personnel selectedPersonnel = listPersonnels.SelectedRows[0].DataBoundItem as Personnel;
+            if (selectedPersonnel == null)
+            {
+                MessageBox.Show("Erreur : le personnel sélectionné est nul.");
+                return;
+            }
+
+            FrmAjModPers frmAjModPers = new FrmAjModPers(selectedPersonnel);
+            DialogResult result = frmAjModPers.ShowDialog();
             if (result == DialogResult.OK)
             {
                 RemplirListePersonnel();
@@ -120,12 +128,8 @@ namespace MediaTek86.view
         /// <param name="e"></param>
         private void button3_Click(object sender, EventArgs e)
         {
-            if (listPersonnels.SelectedRows.Count == 0)
-            {
-                MessageBox.Show("Veuillez sélectionner un personnel à modifier.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
             Personnel personnel = listPersonnels.SelectedRows[0].DataBoundItem as Personnel;
+
         }
     }
 }

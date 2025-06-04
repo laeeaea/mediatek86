@@ -19,26 +19,22 @@ namespace MediaTek86.view
 
         public Personnel personnel = null;
 
-        public FrmAjModPers()
+        public FrmAjModPers(Personnel personnel = null)
         {
             InitializeComponent();
             controller = new FrmAjModPersController();
             RemplirComboBoxService();
+            this.personnel = personnel;
             // Si l'objet personnel est null on doit ajouter, sinon on récupère les infos du personnel dans les TextBox
-            if(personnel != null)
+            if (this.personnel != null)
             {
-                textboxnom.Text = personnel.Nom;
-                textboxprenom.Text = personnel.Prenom;
-                textboxtel.Text = personnel.Tel;
-                textboxmail.Text = personnel.Mail;
-                comboBox1.SelectedIndex = personnel.Service.IdService;
+                textboxnom.Text = this.personnel.Nom;
+                textboxprenom.Text = this.personnel.Prenom;
+                textboxtel.Text = this.personnel.Tel;
+                textboxmail.Text = this.personnel.Mail;
+                comboBox1.SelectedIndex = this.personnel.Service.IdService;
 
             }
-            else
-            {
-                MessageBox.Show("null apres");
-            }
-
         }
 
         private void RemplirComboBoxService()
@@ -84,7 +80,39 @@ namespace MediaTek86.view
         /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
+            try
+            {
+                // Création ou mise à jour de l'objet Personnel
+                Service service = (Service)comboBox1.SelectedItem;
+                Personnel nouveau = new Personnel(
+                    personnel?.IdPersonnel ?? 0,
+                    textboxnom.Text,
+                    textboxprenom.Text,
+                    textboxtel.Text,
+                    textboxmail.Text,
+                    service
+                );
 
+                if (personnel == null)
+                {
+                    // Mode ajout
+                    controller.AjouterPersonnel(nouveau);
+                    MessageBox.Show("Personnel ajouté avec succès.");
+                }
+                else
+                {
+                    // Mode modification
+                    controller.ModifierPersonnel(nouveau);
+                    MessageBox.Show("Personnel modifié avec succès.");
+                }
+
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur lors de la sauvegarde du personnel : " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void textboxprenom_TextChanged(object sender, EventArgs e)
@@ -109,7 +137,8 @@ namespace MediaTek86.view
         /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
-
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
         }
     }
 }
