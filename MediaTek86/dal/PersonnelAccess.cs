@@ -44,7 +44,7 @@ namespace MediaTek86.dal
                         {
                             Log.Debug("Personnel.GetLesPersonnels Personnel : id={0} nom={1} prenom={2} tel={3} mail={4} idservice={5} nomservice={6} ", record[0], record[1], record[2], record[3], record[4], record[5], record[6]);
                             Personnel personnel = new Personnel((int)record[0], (string)record[1], (string)record[2],
-                                (string)record[3], (string)record[4], (int)record[5], (string)record[6]);
+                                (string)record[3], (string)record[4], new Service((int)record[5], (string)record[6]));
                             LesPersonnels.Add(personnel);
                         }
                     }
@@ -58,5 +58,86 @@ namespace MediaTek86.dal
             }
             return LesPersonnels;
         }
+        
+        /// <summary>
+        /// Ajouter un personnel
+        /// </summary>
+        /// <param name="personnel"></param>
+        public void AjouterPersonnel(Personnel personnel)
+        {
+            if (access.Manager != null)
+            {
+                string req = "insert into personnel (nom, prenom, tel, mail, idservice) ";
+                req += "values (@nom, @prenom, @tel, @mail, @idservice);";
+                Dictionary<string, object> parameters = new Dictionary<string, object>
+                {
+                    { "@nom", personnel.Nom },
+                    { "@prenom", personnel.Prenom },
+                    { "@tel", personnel.Tel },
+                    { "@mail", personnel.Mail },
+                    { "@idservice", personnel.Service.IdService }
+                };
+                try
+                {
+                    access.Manager.ReqUpdate(req, parameters);
+                }
+                catch (Exception e) 
+                {
+                    Console.WriteLine(e.Message);
+                    Log.Error("PersonnelAccess.AjouterPersonnel catch req={0} erreur={1}", req, e.Message);
+                    Environment.Exit(0);
+                }
+            }
+        }
+
+        public void ModifierPersonnel(Personnel personnel)
+        {
+            if (access.Manager != null)
+            {
+                string req = "update personnel set nom = @nom, prenom = @prenom, tel = @tel, mail = @mail, idservice = @idservice ";
+                req += "where idpersonnel = @idpersonnel;";
+                Dictionary<string, object> parameters = new Dictionary<string, object>
+                {
+                    {"@idpersonnel", personnel.IdPersonnel },
+                    {"@nom", personnel.Nom },
+                    {"@prenom", personnel.Prenom},
+                    {"@tel", personnel.Tel},
+                    {"@mail", personnel.Mail},
+                    {"@idservice", personnel.Service.IdService }
+                };
+                try
+                {
+                    access.Manager.ReqUpdate(req, parameters);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                    Log.Error("PersonnelAccess.ModifierPersonnel catch req={0} erreur={1}", req, e.Message);
+                    Environment.Exit(0);
+                }
+            }
+        }
+        public void SupprimerPersonnel(Personnel personnel)
+        {
+            if (access.Manager != null)
+            {
+                string req = "delete from personnel where idpersonnel = @idpersonnel;";
+                Dictionary<string, object> parameters = new Dictionary<string, object> {
+                    {"@iddeveloppeur", personnel.IdPersonnel }
+                };
+                try
+                {
+                    access.Manager.ReqUpdate(req, parameters);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                    Log.Error("PersonnelAccess.SupprimerPersonnel catch req={0} erreur={1}", req, e.Message);
+                    Environment.Exit(0);
+                }
+            }
+        }
     }
 }
+
+

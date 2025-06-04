@@ -18,5 +18,10 @@ namespace MediaTek86.model
             this.Nom = nom;
 
         }
+
+        public override string ToString()
+        {
+            return Nom;
+        }
     }
 }

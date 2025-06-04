@@ -113,10 +113,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="bddmanager\bddmanager.cs" />
+    <Compile Include="controller\FrmSupPersController.cs" />
+    <Compile Include="controller\FrmAjModPersController.cs" />
     <Compile Include="controller\FrmConnexionPageController.cs" />
     <Compile Include="controller\FrmPersonnelPageController.cs" />
     <Compile Include="dal\Access.cs" />
     <Compile Include="dal\AbsenceAccess.cs" />
+    <Compile Include="dal\ServiceAccess.cs" />
     <Compile Include="dal\ResponsableAccess.cs" />
     <Compile Include="dal\PersonnelAccess.cs" />
     <Compile Include="model\Absence.cs" />

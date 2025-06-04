@@ -58,6 +58,7 @@
             this.textboxprenom.Name = "textboxprenom";
             this.textboxprenom.Size = new System.Drawing.Size(121, 26);
             this.textboxprenom.TabIndex = 1;
+            this.textboxprenom.TextChanged += new System.EventHandler(this.textboxprenom_TextChanged);
             // 
             // textboxtel
             // 
@@ -65,6 +66,7 @@
             this.textboxtel.Name = "textboxtel";
             this.textboxtel.Size = new System.Drawing.Size(121, 26);
             this.textboxtel.TabIndex = 2;
+            this.textboxtel.TextChanged += new System.EventHandler(this.textboxtel_TextChanged);
             // 
             // textboxmail
             // 
@@ -72,6 +74,7 @@
             this.textboxmail.Name = "textboxmail";
             this.textboxmail.Size = new System.Drawing.Size(121, 26);
             this.textboxmail.TabIndex = 3;
+            this.textboxmail.TextChanged += new System.EventHandler(this.textboxmail_TextChanged);
             // 
             // comboBox1
             // 
@@ -80,6 +83,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 28);
             this.comboBox1.TabIndex = 4;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -136,6 +140,7 @@
             this.label6.Size = new System.Drawing.Size(509, 29);
             this.label6.TabIndex = 10;
             this.label6.Text = " Ajouter ou modifier un membre du personnel :";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // button1
             // 
@@ -145,6 +150,7 @@
             this.button1.TabIndex = 11;
             this.button1.Text = "Valider";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -154,8 +160,9 @@
             this.button2.TabIndex = 12;
             this.button2.Text = "Annuler";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // ajo_mod_pers
+            // FrmAjModPers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -173,8 +180,9 @@
             this.Controls.Add(this.textboxtel);
             this.Controls.Add(this.textboxprenom);
             this.Controls.Add(this.textboxnom);
-            this.Name = "ajo_mod_pers";
+            this.Name = "FrmAjModPers";
             this.Text = "Ajouter ou modifier personnel";
+            this.Load += new System.EventHandler(this.FrmAjModPers_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

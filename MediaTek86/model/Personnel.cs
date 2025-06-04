@@ -13,18 +13,17 @@ namespace MediaTek86.model
         public string Prenom { get; set; }
         public string Tel { get; set; }
         public string Mail { get; set; }
-        public int IdService { get; set; }
-        public string NomService { get; set; }
+        public Service Service { get; set; }
 
-        public Personnel(int idPersonnel, string nom, string prenom, string tel, string mail, int idService, string nomService)
+        public Personnel(int idPersonnel, string nom, string prenom, string tel, string mail, Service service)
         {
             this.IdPersonnel = IdPersonnel;
             this.Nom = nom;
             this.Prenom = prenom;
             this.Tel = tel;
             this.Mail = mail;
-            this.IdService = idService;
-            this.NomService = nomService;
+            this.Service = service;
+
         }
 
     }

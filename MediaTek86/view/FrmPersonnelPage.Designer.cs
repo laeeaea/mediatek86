@@ -62,24 +62,29 @@
             // 
             // button2
             // 
+            this.button2.Enabled = false;
             this.button2.Location = new System.Drawing.Point(129, 337);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(106, 40);
             this.button2.TabIndex = 3;
             this.button2.Text = "Modifier";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
+            this.button3.Enabled = false;
             this.button3.Location = new System.Drawing.Point(241, 337);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(106, 40);
             this.button3.TabIndex = 4;
             this.button3.Text = "Supprimer";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
+            this.button4.Enabled = false;
             this.button4.Location = new System.Drawing.Point(597, 337);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(180, 40);
