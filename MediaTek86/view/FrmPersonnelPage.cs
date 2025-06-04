@@ -14,25 +14,30 @@ namespace MediaTek86.view
 {
     public partial class FrmPersonnelPage : Form
     {
-        private FrmPersonnelPageController controller;
-
         private readonly BindingSource bdgPersonnels = new BindingSource();
+        
+        private FrmPersonnelPageController controller;
         public FrmPersonnelPage()
         {
             InitializeComponent();
-            controller = new FrmPersonnelPageController();
-            RemplirListePersonnel();
+            Init();
 
         }
 
+        private void Init()
+        {
+            controller = new FrmPersonnelPageController();
+            RemplirListePersonnel();
+        }
         private void RemplirListePersonnel()
         {
             List<Personnel> lesPersonnels;
             lesPersonnels = controller.GetLesPersonnels();
             bdgPersonnels.DataSource = lesPersonnels;
+            listPersonnels.AutoGenerateColumns = true;
             listPersonnels.DataSource = bdgPersonnels;
-            //listPersonnels.Columns["iddeveloppeur"].Visible = false;
-            //listPersonnels.Columns["pwd"].Visible = false;
+            listPersonnels.Columns["IdPersonnel"].Visible = false;
+            listPersonnels.Columns["IdService"].Visible = false;
             listPersonnels.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
 
 

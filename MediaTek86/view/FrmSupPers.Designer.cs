@@ -37,11 +37,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label1.Location = new System.Drawing.Point(12, 56);
+            this.label1.Location = new System.Drawing.Point(75, 65);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(682, 29);
+            this.label1.Size = new System.Drawing.Size(553, 29);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Souhaitez-vous vraiment supprimer ce membre du personnel ?";
+            this.label1.Text = "Souhaitez-vous vraiment supprimer ce personnel ?";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // button1
@@ -62,7 +62,7 @@
             this.button2.Text = "Annuler";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // sup_pers
+            // FrmSupPers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -70,7 +70,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
-            this.Name = "sup_pers";
+            this.Name = "FrmSupPers";
             this.Text = "Supprimer personnel";
             this.ResumeLayout(false);
             this.PerformLayout();

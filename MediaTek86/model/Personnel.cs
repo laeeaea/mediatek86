@@ -14,8 +14,9 @@ namespace MediaTek86.model
         public string Tel { get; set; }
         public string Mail { get; set; }
         public int IdService { get; set; }
+        public string NomService { get; set; }
 
-        public Personnel(int idPersonnel, string nom, string prenom, string tel, string mail, int idService)
+        public Personnel(int idPersonnel, string nom, string prenom, string tel, string mail, int idService, string nomService)
         {
             this.IdPersonnel = IdPersonnel;
             this.Nom = nom;
@@ -23,6 +24,7 @@ namespace MediaTek86.model
             this.Tel = tel;
             this.Mail = mail;
             this.IdService = idService;
+            this.NomService = nomService;
         }
 
     }
