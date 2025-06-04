@@ -128,7 +128,13 @@ namespace MediaTek86.view
         /// <param name="e"></param>
         private void button3_Click(object sender, EventArgs e)
         {
-            Personnel personnel = listPersonnels.SelectedRows[0].DataBoundItem as Personnel;
+            Personnel selectedPersonnel = listPersonnels.SelectedRows[0].DataBoundItem as Personnel;
+            FrmSupPers frmSupPers = new FrmSupPers(selectedPersonnel);
+            DialogResult result = frmSupPers.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                RemplirListePersonnel();
+            }
 
         }
     }

@@ -17,10 +17,14 @@ namespace MediaTek86.view
     {
         private FrmSupPersController controller;
 
-        public FrmSupPers()
+        public Personnel SelectedPersonnel = null;
+
+        public FrmSupPers(Personnel personnel)
         {
             InitializeComponent();
             controller = new FrmSupPersController();
+            this.SelectedPersonnel = personnel;
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -35,7 +39,10 @@ namespace MediaTek86.view
         /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
-
+            controller.SupprimerPersonnel(SelectedPersonnel);
+            MessageBox.Show("Personnel supprimé avec succès.");
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
 
 
@@ -46,7 +53,8 @@ namespace MediaTek86.view
         /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
-
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
         }
     }
 }
