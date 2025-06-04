@@ -107,6 +107,7 @@
             this.Controls.Add(this.textBox1);
             this.Name = "FrmConnexionPage";
             this.Text = "Connexion";
+            this.Load += new System.EventHandler(this.FrmConnexionPage_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -88,5 +88,10 @@ namespace MediaTek86.view
         {
 
         }
+
+        private void FrmConnexionPage_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
